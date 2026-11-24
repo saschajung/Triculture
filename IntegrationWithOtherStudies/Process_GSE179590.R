@@ -200,7 +200,7 @@ annotateCells <- function(seur,plot.path = "./"){
   inp_df <- log(inp_df+1)
   inp_df[] = normalize.quantiles(as.matrix(inp_df))
 
-  cm_human <- read.table("./Cell_marker_Human.txt",header = T, sep = "\t",stringsAsFactors = F, quote = "",comment.char = "")
+  cm_human <- read.table("./InputData/Cell_marker_Human.txt",header = T, sep = "\t",stringsAsFactors = F, quote = "",comment.char = "")
   cm_human <- cm_human[cm_human$tissue_class == "Brain",]
   cm_human <- cm_human[cm_human$cancer_type == "Normal",]
   cm_human <- cm_human[cm_human$cell_type != "Cancer cell",]
@@ -412,7 +412,7 @@ for(path in paths){
 }
 
 #Integration
-files <- list.files("./OtherStudies/GSE179590",pattern = ".rds",recursive = T,full.names = T)
+files <- list.files("./IntegrationWithOtherStudies/GSE179590",pattern = ".rds",recursive = T,full.names = T)
 obj.list <- list()
 for(f in files){
   samp <- str_extract(f,"S[0-9]+")
@@ -420,7 +420,7 @@ for(f in files){
   obj.list[[samp]] <- readRDS(f)
 }
 
-plot.path <- "./OtherStudies/GSE179590/"
+plot.path <- "./IntegrationWithOtherStudies/GSE179590/"
 
 common_genes <- Reduce(intersect, lapply(obj.list, rownames))
 
@@ -486,7 +486,7 @@ ggsave(paste0(plot.path,"densMap.png"),DimPlot(combined.sct, reduction = "densum
 combined.sct <- annotateCells(combined.sct,plot.path = plot.path)
 
 #Read metadata
-meta <-read.table("./OtherStudies/GSE179590/GSE179590_MS_brains_8samples_cell_lvl_metadata.csv", sep = ",", header = T, stringsAsFactors = F, quote = "",comment.char = "")
+meta <-read.table("./IntegrationWithOtherStudies/GSE179590/GSE179590_MS_brains_8samples_cell_lvl_metadata.csv", sep = ",", header = T, stringsAsFactors = F, quote = "",comment.char = "")
 table(meta$disease.status,meta$sample.ID)
 combined.sct$DiseaseStatus <- "SPMS"
 combined.sct$DiseaseStatus[combined.sct$orig.ident %in% c("S1","S10","S5")] <- "RRMS"

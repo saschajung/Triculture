@@ -165,7 +165,7 @@ annotateCells <- function(seur,plot.path = "./"){
   inp_df <- log(inp_df+1)
   inp_df[] = normalize.quantiles(as.matrix(inp_df))
   
-  cm_human <- read.table("./Cell_marker_Human.txt",header = T, sep = "\t",stringsAsFactors = F, quote = "",comment.char = "")
+  cm_human <- read.table("./InputData/Cell_marker_Human.txt",header = T, sep = "\t",stringsAsFactors = F, quote = "",comment.char = "")
   cm_human <- cm_human[cm_human$tissue_class == "Brain",]
   cm_human <- cm_human[cm_human$cancer_type == "Normal",]
   cm_human <- cm_human[cm_human$cell_type != "Cancer cell",]
