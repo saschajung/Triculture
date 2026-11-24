@@ -3,6 +3,7 @@ library(plyr)
 library(dplyr)
 library(ggraph)
 library(ggsci)
+library(matrixStats)
 
 source("./aux/colorDefinitions.R")
 

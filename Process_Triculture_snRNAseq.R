@@ -355,7 +355,7 @@ ggsave(paste0(plot.path,"densMap.png"),DimPlot(snuc_filtered_nodups, reduction =
 rm(snuc_filtered)
 rm(snuc)
 
-saveRDS(snuc_filtered_nodups,"/sNuc-seq/sNuc_SeuratObj.rds")
+saveRDS(snuc_filtered_nodups,"./sNuc-seq/sNuc_SeuratObj.rds")
 
 #Read scNuc data
 scNuc <- readRDS("./sNuc-seq/sNuc_SeuratObj.rds")

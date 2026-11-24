@@ -27,7 +27,7 @@ microglia.diff <- Libra::run_de(input = sub,
                                 label_col = "Origin",
                                 de_family = "pseudobulk",
                                 de_method = "edgeR",
-                                de_type = "QLF") #Negative FC means higher in this study
+                                de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Astrocyte (This study)","Astrocyte (Brain)") & donor_id %in% c("H18.30.002", "H19.30.001", "H19.30.002", "sNuc"))
 DefaultAssay(sub) <- "SCT"
@@ -46,7 +46,7 @@ astrocyte.diff <- Libra::run_de(input = sub,
                                 label_col = "Origin",
                                 de_family = "pseudobulk",
                                 de_method = "edgeR",
-                                de_type = "QLF") #Negative FC means higher in this study
+                                de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Neuron (This study)","Glutamatergic Neuron (Brain)"))
 sub$CTs <- "Neuron"
@@ -66,7 +66,7 @@ excitNeuron.diff <- Libra::run_de(input = sub,
                                   label_col = "Origin",
                                   de_family = "pseudobulk",
                                   de_method = "edgeR",
-                                  de_type = "QLF") #Negative FC means higher in this study
+                                  de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Neuron (This study)","GABAergic Neuron (Brain)"))
 sub$CTs <- "Neuron"
@@ -86,7 +86,7 @@ inhibNeuron.diff <- Libra::run_de(input = sub,
                                   label_col = "Origin",
                                   de_family = "pseudobulk",
                                   de_method = "edgeR",
-                                  de_type = "QLF") #Negative FC means higher in this study
+                                  de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("OPC (This study)","OPC (Brain)") & donor_id %in% c("H18.30.002", "H19.30.001", "H19.30.002", "sNuc"))
 sub$CTs <- "OPC"
@@ -106,7 +106,7 @@ opc.diff <- Libra::run_de(input = sub,
                           label_col = "Origin",
                           de_family = "pseudobulk",
                           de_method = "edgeR",
-                          de_type = "QLF") #Negative FC means higher in this study
+                          de_type = "QLF")
 
 save(astrocyte.diff,microglia.diff,inhibNeuron.diff,excitNeuron.diff,opc.diff,file = "./IntegrationWithOtherStudies/Linnarsson/DifferentialExpressionResults.RData",compression_level = 6)
 

@@ -13,7 +13,7 @@ library(ggsci)
 # import scanpy as sc
 # 
 # files = glob.glob(os.path.expanduser("~/Downloads/*.h5ad"))
-# output_dir = os.path.expanduser("./OtherStudies/Linnarsson/")
+# output_dir = os.path.expanduser("./IntegrationWithOtherStudies/Linnarsson/")
 # 
 # rng = np.random.default_rng(42)
 # 

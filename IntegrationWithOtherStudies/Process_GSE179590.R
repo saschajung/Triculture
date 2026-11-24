@@ -18,6 +18,47 @@ library(SeuratWrappers)
 library(GSA)
 library(stringr)
 
+
+subct_map <- c("1" = "Astrocyte",
+               "2" = "Astrocyte",
+               "3" = "OLIG1+GFAP+ Cells",
+               "4" = "Astrocyte",
+               "5" = "Astrocyte",
+               "6" = "Astrocyte",
+               "7" = "Astrocyte",
+               "8" = "Astrocyte",
+               "9" = "Radial Glia",
+               "10" = "Astrocyte",
+               "11" = "Astrocyte",
+               "12" = "Astrocyte",
+               "13" = "Radial Glia",
+               "14" = "Astrocyte",
+               "15" = "Microglia",
+               "16" = "OPC",
+               "17" = "Radial Glia",
+               "18" = "Neuron",
+               "19" = "Fibroblast-like")
+
+ct_map <- c("1" = "Astrocyte",
+            "2" = "Astrocyte",
+            "3" = "OLIG1+GFAP+ Cells",
+            "4" = "Astrocyte",
+            "5" = "Astrocyte",
+            "6" = "Astrocyte",
+            "7" = "Astrocyte",
+            "8" = "Astrocyte",
+            "9" = "Radial Glia",
+            "10" = "Astrocyte",
+            "11" = "Astrocyte",
+            "12" = "Astrocyte",
+            "13" = "Radial Glia",
+            "14" = "Astrocyte",
+            "15" = "Microglia",
+            "16" = "OPC",
+            "17" = "Radial Glia",
+            "18" = "Neuron",
+            "19" = "Fibroblast-like")
+
 ## Functions ##
 #seur: A Seurat object
 #pass: An identifier of the number of times this function is running. Only for plotting.
@@ -581,6 +622,6 @@ combined.sct$Clusts <- combined.sct$seurat_clusters
 combined.sct$Clusts[combined.sct$orig.ident == "snuc"] <- paste0(combined.sct$Clusts[combined.sct$orig.ident == "snuc"]," (This study)")
 combined.sct$Clusts[combined.sct$orig.ident != "snuc"] <- paste0(combined.sct$Clusts[combined.sct$orig.ident != "snuc"]," (Brain)")
 
-save(combined.sct,file = "./IntegrationWithOtherStudies/GSE179590/sNucIntegration/Combined_SeuratObj.RData",compression_level = 9)
+save(combined.sct,file = "./IntegrationWithOtherStudies/GSE179590/Combined_SeuratObj.RData",compression_level = 9)
 
 

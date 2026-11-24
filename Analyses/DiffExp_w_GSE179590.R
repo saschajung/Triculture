@@ -25,7 +25,7 @@ microglia.diff <- Libra::run_de(input = sub,
                                 label_col = "Origin",
                                 de_family = "pseudobulk",
                                 de_method = "edgeR",
-                                de_type = "QLF") #Negative FC means higher in this study
+                                de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Astrocyte (This study)","Astrocyte (Brain)"))
 DefaultAssay(sub) <- "SCT"
@@ -43,7 +43,7 @@ astrocyte.diff <- Libra::run_de(input = sub,
                                 label_col = "Origin",
                                 de_family = "pseudobulk",
                                 de_method = "edgeR",
-                                de_type = "QLF") #Negative FC means higher in this study
+                                de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Neuron (This study)","Excitatory Neuron (Brain)"))
 sub$CTs <- "Neuron"
@@ -62,7 +62,7 @@ excitNeuron.diff <- Libra::run_de(input = sub,
                                   label_col = "Origin",
                                   de_family = "pseudobulk",
                                   de_method = "edgeR",
-                                  de_type = "QLF") #Negative FC means higher in this study
+                                  de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("Neuron (This study)","Inhibitory Neuron (Brain)"))
 sub$CTs <- "Neuron"
@@ -81,7 +81,7 @@ inhibNeuron.diff <- Libra::run_de(input = sub,
                                   label_col = "Origin",
                                   de_family = "pseudobulk",
                                   de_method = "edgeR",
-                                  de_type = "QLF") #Negative FC means higher in this study
+                                  de_type = "QLF")
 
 sub <- subset(combined.sct, subset = CTOrigin %in% c("OPC (This study)","OPC (Brain)"))
 sub$CTs <- "OPC"
@@ -100,7 +100,7 @@ opc.diff <- Libra::run_de(input = sub,
                           label_col = "Origin",
                           de_family = "pseudobulk",
                           de_method = "edgeR",
-                          de_type = "QLF") #Negative FC means higher in this study
+                          de_type = "QLF")
 
 save(astrocyte.diff,microglia.diff,inhibNeuron.diff,excitNeuron.diff,opc.diff,file = "./IntegrationWithOtherStudies/GSE179590/DifferentialExpressionResults.RData",compression_level = 6)
 
