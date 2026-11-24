@@ -4,6 +4,7 @@ library(scCustomize)
 library(ggsci)
 
 ###### PYTHON #####
+### Downsample original h5ad file to 1000 cells per cell type
 
 # import os
 # import glob
@@ -43,7 +44,7 @@ library(ggsci)
 # gc.collect()
 
 ##### R
-files <- list.files(path = "./OtherStudies/Linnarsson",pattern = ".h5ad",full.names = T)
+files <- list.files(path = "./IntegrationWithOtherStudies/Linnarsson",pattern = ".h5ad",full.names = T)
 
 obj_list <- list()
 for(f in files){
@@ -55,7 +56,7 @@ for(f in files){
   seurat_obj[["RNA"]]$counts <- LayerData(seurat_obj[["RNA"]], layer = "X")
   seurat_obj[["RNA"]]$X <- NULL
   
-  n <- tools::file_path_sans_ext(gsub("/Users/sjung/Documents/Microglia_Stanford/OtherStudies/Linnarsson/","",f,fixed = T))
+  n <- tools::file_path_sans_ext(gsub("./IntegrationWithOtherStudies/Linnarsson/","",f,fixed = T))
   obj_list[[n]] <- seurat_obj
   
 }
@@ -136,7 +137,7 @@ combined.sct <- IntegrateData(anchorset = anchors,
 rm(anchors)
 
 combined.sct <- RunPCA(combined.sct, npcs = 100, verbose = TRUE)
-plot.path <- "./OtherStudies/Linnarsson/"
+plot.path <- "./IntegrationWithOtherStudies/Linnarsson/"
 ggsave(paste0(plot.path,"ElbowPlot.png"),ElbowPlot(combined.sct,ndims = 100)) #Take 50
 
 numPCs <- 50
@@ -204,25 +205,12 @@ ctMap <- c("amygdala excitatory neuron" = "Glutamatergic Neuron",
 
 combined.sct$CTs <- unname(ctMap[combined.sct$cell_type])
 
-#combined.sct$CTs[combined.sct$CTs == "Oligodendrocytes"] <- "Oligodendrocyte"
-
 combined.sct$CTOrigin <- paste0(combined.sct$CTs," (",combined.sct$Origin,")")
 
 sub <- subset(combined.sct, subset = CTs == "OPC")
 DimPlot(sub,reduction = "umap", group.by = "Origin")
 
-saveRDS(combined.sct,file = "./OtherStudies/Linnarsson/Combined_SeuratObj.rds")
-combined.sct <- readRDS("./OtherStudies/Linnarsson/Combined_SeuratObj.rds")
+saveRDS(combined.sct,file = "./IntegrationWithOtherStudies/Linnarsson/Combined_SeuratObj.rds")
 
-p <- DimPlot_scCustom(seurat_object = combined.sct,
-                      repel = T,
-                      group.by = "CTOrigin",
-                      figure_plot = TRUE,
-                      label = T,
-                      label.color = "white",
-                      label.box	= T
-                      )
-p[[1]] <- p[[1]] + ggtitle("") + theme(legend.position = "none")
-p
 
 
