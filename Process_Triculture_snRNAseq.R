@@ -23,7 +23,6 @@ library(pheatmap)
 library(SeuratWrappers)
 library(GSA)
 
-
 ## Functions ##
 #seur: A Seurat object
 #pass: An identifier of the number of times this function is running. Only for plotting.

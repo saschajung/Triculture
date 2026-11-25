@@ -1,6 +1,7 @@
 library(CCPlotR)
 library(plyr)
 library(dplyr)
+library(ggplot2)
 
 source("./aux/colorDefinitions.R")
 

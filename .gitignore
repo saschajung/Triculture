@@ -58,3 +58,15 @@ PaperPlots/FigS4G.png
 PaperPlots/FigS4H.png
 /sNuc-seq/Intercom_forPaper_RNA
 /scRNA-seq/Y1_forPaperFinal
+/scRNA-seq/CellRanger-Count-10X
+scRNA-seq/UMAP.png
+scRNA-seq/tSNE.png
+scRNA-seq/PCA_CellCycleGenes.png
+scRNA-seq/Mitofilter_Marginal_Pass1.png
+scRNA-seq/FeatureAndCountOutlier_3_Pass1.png
+scRNA-seq/FeatureAndCountOutlier_2_Pass1.png
+scRNA-seq/FeatureAndCountFilter_1_Pass1.png
+scRNA-seq/ElbowPlot.png
+scRNA-seq/Doublets.png
+scRNA-seq/Count_Feature_Marginal_1stPass.png
+/sNuc-seq/CellRanger-Count-10X
