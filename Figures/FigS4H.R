@@ -1,6 +1,7 @@
 library(ggplot2)
 library(ggheatmap)
 library(scales)
+library(ggtree)
 
 source("./aux/colorDefinitions.R")
 

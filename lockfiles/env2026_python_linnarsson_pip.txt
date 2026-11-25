@@ -1,0 +1,15 @@
+# pip-installed packages of the Linnarsson preprocessing environment (conda list -p /opt/anaconda3, channel pypi)
+anndata==0.12.18
+array-api-compat==1.15.0
+donfig==0.8.1.post1
+fast-array-utils==1.4.1
+google-crc32c==1.8.0
+legacy-api-wrap==1.5
+natsort==8.4.0
+numcodecs==0.16.5
+pynndescent==0.6.0
+scanpy==1.12.2
+scverse-misc==0.1.1
+session-info2==0.4.1
+umap-learn==0.5.12
+zarr==3.2.1

@@ -1,0 +1,103 @@
+# densvis 1.8.3 Python environment (2023 environment, densMAP in Process_Triculture_*.R and Process_scOrganoids.R / Process_GSE179590.R)
+# densvis creates this environment itself through basilisk; its default build pins python 3.8.13, umap-learn 0.5.0, scikit-learn 0.24.0 (conda-forge).
+#
+# == x86_64 (Intel; recommended): conda-forge, pins: python=3.8.13 umap-learn=0.5.0 scikit-learn=0.24.0 numba=0.52.0 scipy=1.6.0 'libcxx<13'
+# create (exact): save the x86_64 package lines below (without '#' lines) as densvis_x86_64.txt, then
+#   conda create -p <env> -c conda-forge --override-channels --file densvis_x86_64.txt
+# full package list (conda list --export of the environment that ran densMAP in the Intel verification):
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+_openmp_mutex=4.5=8_kmp_llvm
+bzip2=1.0.8=h374f1ed_10
+ca-certificates=2026.11.20=hbd8a1cb_0
+joblib=1.4.2=pyhd8ed1ab_0
+libblas=3.9.0=20_osx64_openblas
+libcblas=3.9.0=20_osx64_openblas
+libcxx=12.0.1=habf9029_1
+libffi=3.4.6=h281671d_1
+libgcc=16.2.0=h13771c8_7
+libgfortran=16.2.0=h7e5c614_7
+libgfortran5=16.2.0=h2539e6c_7
+liblapack=3.9.0=20_osx64_openblas
+libllvm10=10.0.1=h009f743_3
+liblzma=5.8.3=hbb4bfdb_1
+liblzma-devel=5.8.3=hbb4bfdb_1
+libopenblas=0.3.25=openmp_hfef2a42_0
+libsqlite=3.46.0=h1b8f9f3_0
+libzlib=1.2.13=h87427d6_6
+llvm-openmp=23.1.6=h8c1e6b9_0
+llvmlite=0.35.0=py38hc583f44_1
+ncurses=6.6=hcc0dc9a_1
+numba=0.52.0=py38he9f00de_0
+numpy=1.20.3=py38h5cb586d_2
+openssl=3.6.5=h332eb6d_0
+pip=24.3.1=pyh8b19718_0
+pynndescent=0.5.13=pyhff2d567_0
+python=3.8.13=h66c20e1_0_cpython
+python_abi=3.8=9_cp38
+readline=8.3=h000c2f7_1
+scikit-learn=0.24.0=py38hfd19401_0
+scipy=1.6.0=py38ha68b950_0
+setuptools=75.3.0=pyhd8ed1ab_0
+sqlite=3.46.0=h28673e1_0
+tbb=2020.2=h940c156_4
+threadpoolctl=3.5.0=pyhc1e730c_0
+tk=8.6.13=h1abcd95_1
+umap-learn=0.5.0=py38h50d1736_0
+wheel=0.45.1=pyhd8ed1ab_0
+xz=5.8.3=h6a5a847_1
+xz-gpl-tools=5.8.3=h6a5a847_1
+xz-tools=5.8.3=hbb4bfdb_1
+zlib=1.2.13=h87427d6_6
+#
+# == arm64 (Apple silicon): densvis's default build fails here (numba 0.53.1 cannot compile umap-learn 0.5.0's int32 'dim' locals).
+# Working pins: python 3.8.13, scikit-learn 0.24.0, numba 0.52.0, llvmlite 0.35.0, pynndescent 0.5.2, libcxx 12.0.1, scipy 1.8.0 (no osx-arm64 build of 1.6.0), umap-learn 0.5.0 from PyPI.
+# create (exact): save the arm64 package lines below (without '#' lines and without the umap-learn=0.5.0=pypi_0 line) as densvis_arm64.txt, then
+#   conda create -p <env> -c conda-forge --override-channels --file densvis_arm64.txt
+#   <env>/bin/python -m pip install --no-deps umap-learn==0.5.0
+# full package list (conda list --export of the environment that ran densMAP in the arm64 triculture verification):
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-arm64
+_openmp_mutex=4.5=8_kmp_llvm
+bzip2=1.0.8=h4e30115_10
+ca-certificates=2026.11.20=hbd8a1cb_0
+joblib=1.4.2=pyhd8ed1ab_0
+libblas=3.9.0=20_osxarm64_openblas
+libcblas=3.9.0=20_osxarm64_openblas
+libcxx=12.0.1=h168391b_1
+libffi=3.4.6=h1da3d7d_1
+libgcc=16.2.0=h3cf6597_7
+libgfortran=16.2.0=h07b0088_7
+libgfortran5=16.2.0=hdb7a957_7
+liblapack=3.9.0=20_osxarm64_openblas
+libllvm10=10.0.1=h4468dd5_2
+liblzma=5.8.3=h8088a28_1
+liblzma-devel=5.8.3=h8088a28_1
+libopenblas=0.3.25=openmp_h6c19121_0
+libsqlite=3.46.0=hfb93653_0
+libzlib=1.2.13=hfb2fe0b_6
+llvm-openmp=23.1.6=hdb3d66b_0
+llvmlite=0.35.0=py38h57246dd_1
+ncurses=6.6=he64c551_1
+numba=0.52.0=py38h9b9bf68_0
+numpy=1.20.3=py38he594345_2
+openssl=3.6.5=h55eecbc_0
+pip=24.3.1=pyh8b19718_0
+pynndescent=0.5.2=pyh44b312d_0
+python=3.8.13=hd3575e6_0_cpython
+python_abi=3.8=9_cp38
+readline=8.3=h8b90a29_1
+scikit-learn=0.24.0=py38h397cc00_0
+scipy=1.8.0=py38hd0c9ec0_1
+setuptools=75.3.0=pyhd8ed1ab_0
+sqlite=3.46.0=h5838104_0
+threadpoolctl=3.5.0=pyhc1e730c_0
+tk=8.6.13=h5083fa2_1
+umap-learn=0.5.0=pypi_0
+wheel=0.45.1=pyhd8ed1ab_0
+xz=5.8.3=hd0f0c4f_1
+xz-gpl-tools=5.8.3=hd0f0c4f_1
+xz-tools=5.8.3=h8088a28_1
+zlib=1.2.13=hfb2fe0b_6
